@@ -1,4 +1,4 @@
-let ms =[2,"Freelance", [99,21, [99,12,656,["Simon","Holly"],78,34] ,45,67],45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188,293];
+let ms =[[12,32],[65,48]];
 function compareMax(arr){
   if(typeof arr=="object"){
     let max=0;
@@ -13,11 +13,7 @@ function compareMax(arr){
     }
   }
   for(let f of arr){
-    if(typeof f =="object"){
-      recSrrMAx=compareMax(f);
-      
-    }
-    else if(typeof f=="number"){
+     if(typeof f=="number"){
       if(f>max){
         max=f;
       }
