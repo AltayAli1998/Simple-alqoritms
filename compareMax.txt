@@ -1,0 +1,37 @@
+let ms =[2,"Freelance", [99,21, [99,12,656,["Simon","Holly"],78,34] ,45,67],45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188,293];
+function compareMax(arr){
+  if(typeof arr=="object"){
+    let max=0;
+    let recSrrMAx=0;
+    
+  for(let i of arr){
+    if(typeof i == "number"){
+      max=i;
+      break;
+    }else if(typeof i=="object"){
+      max=compareMax(i);
+    }
+  }
+  for(let f of arr){
+    if(typeof f =="object"){
+      recSrrMAx=compareMax(f);
+      
+    }
+    else if(typeof f=="number"){
+      if(f>max){
+        max=f;
+      }
+    }
+  }
+  if(max<recSrrMAx){
+    max=recSrrMAx;
+  }
+     return max;
+  }
+ else{
+   console.log("argument is not object!");
+ }
+}
+
+console.log(compareMax(ms));
+
