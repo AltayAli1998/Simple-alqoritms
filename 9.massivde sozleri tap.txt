@@ -1,0 +1,9 @@
+let array=[678,"Freelance",45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188, 293 ];
+function findWordInArray(array){
+  for(let i of array){
+    if(typeof i == "string"){
+      console.log(i);
+    }
+  }
+  
+}

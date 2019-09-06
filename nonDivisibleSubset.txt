@@ -1,0 +1,33 @@
+let arrayS =[12,65,21,45,[35,65],12,62,90,[24,56],78,35];
+let k=5;
+function nonDivisibleSubset(array,k){
+  let resultArray=[];
+  let index=0;
+  for(let i of array){
+    if(typeof i=="number"){
+    if(resultArray.length>0){
+      let count=0;
+      for(let j of resultArray){
+        if((i+j)%k==0){
+          count++;
+        }
+       }
+       if(count==0){
+         resultArray[index]=i;
+          index++;
+       }
+    }else{
+      resultArray[index]=i;
+      index++;
+    }
+    }else if(typeof i =="object"){
+      let array2=nonDivisibleSubset(i,k);
+        if(array2.length>1){
+          resultArray[index]=array2;
+          index++;
+        }
+    }
+  }
+  return resultArray;
+}
+console.log(nonDivisibleSubset(arrayS,k))

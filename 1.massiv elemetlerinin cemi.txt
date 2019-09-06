@@ -1,0 +1,8 @@
+let array=[678,45,67,89,23,545,188 ,293 ];
+function getSumArrayElements(array){
+  let sum=0;
+  for(let i of array){
+    sum+=i;
+  }
+  return sum;
+}

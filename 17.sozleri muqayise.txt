@@ -1,0 +1,32 @@
+
+let firstWord="Rode academy";
+let secondWord="R# programming";
+function compareTwoWords(first,second){
+  let firsrWordsArray=changeASCII(first);
+  let secondWordsArray=changeASCII(second);
+  let count;
+  if(firsrWordsArray.length>secondWordsArray.length){
+    count=firsrWordsArray.length;
+  }
+  else{
+     count=secondWordsArray.length;
+  }
+  for(let i=0;i<count;i++){
+    if(firsrWordsArray[i]>secondWordsArray[i]){
+      console.log(first +" > "+second);
+      break;
+    }
+    else if(firsrWordsArray[i]<secondWordsArray[i]){
+      console.log(first +" < "+second);
+      break;
+    }
+  }
+}
+function changeASCII(word){
+  let array=[0];
+  for(let i=0;i<word.length;i++){
+    array[i]=word[i].charCodeAt();
+  }
+  return array;
+}
+compareTwoWords(firstWord,secondWord);

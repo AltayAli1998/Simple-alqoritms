@@ -1,0 +1,8 @@
+function chanceWordLetterAlfabetic(word){
+  let chancedWord="";
+  for(let i of word){
+    let letter=i.charCodeAt();
+    chancedWord+=String.fromCharCode(letter+1);
+  }
+  return chancedWord;
+}

@@ -1,0 +1,26 @@
+let array=[678,45,67,89,23,545,188 ,293 ];
+function findMaxElementInArray(array){
+  
+  let max=array[0];
+  for(let i of array){
+   if(max<i){
+     max=i
+   }
+  }
+  return max;
+}
+function findMinElementInArray(array){
+  
+  let mix=array[0];
+  for(let i of array){
+   if(min>i){
+     min=i
+   }
+  }
+  return min;
+}
+function distictionMaxAndMin(array){
+  let max=findMaxElementInArray(array);
+  let min=findMinElementInArray(array);
+  return max-min;
+}

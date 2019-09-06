@@ -1,0 +1,11 @@
+function isSoftOrStrict(first,second,third){
+
+   if(first<second&&second<third){
+     console.log("This is strict mod");
+   }
+   else if(first>=second){
+     console.log("this is soft mode");
+        }
+
+
+}

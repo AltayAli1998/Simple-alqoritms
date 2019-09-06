@@ -1,0 +1,168 @@
+//EBOB tapma funskiyasi
+function getElementsEBOB(firstElement,secondElement){
+  let firstElementArray=getDivided(firstElement);
+  let secondElementArray=getDivided(secondElement);
+  let resultArray=getResultArray(firstElementArray,secondElementArray);
+let ebob=getExtraction(resultArray);
+return ebob;
+}
+
+
+//massivin elementelerinin hasili funksiyasi
+function getExtraction(array){
+  let ext=1;
+  for(let item of array){
+      ext*=item;
+  }
+  return ext;
+}
+
+//ededi sade bolenlerine ayirma funksiyasi
+function getDivided(element){
+  let number=element;
+  let array=[1];
+  let i=0;
+  let divide=2;
+  while(number>1){
+    if(number%divide==0){
+     array[i]=divide;
+     number=number/divide;
+     i++;
+   }
+   else{
+     divide++;
+     }
+  }
+return array;
+}
+
+//iki arrayin ortaq elementlerinden ibaret massiv
+function getResultArray(firstArray,secondArray){
+ let array=[1];
+ let commonElementsInArray=commonElemetsFunction(firstArray,secondArray);
+ let index=0;
+ for(let item of commonElementsInArray){
+   let countFirst=countSameElement(firstArray,item);
+   let countSecond=countSameElement(secondArray,item);
+  if(countFirst>countSecond){
+  for(let i=0;i<countSecond;i++){
+    array[index]=item;
+    index++;
+  }
+  }else{
+  for(let i=0;i<countFirst;i++){  
+    array[index]=item;
+    index++;
+  }
+  }
+
+ }
+return array;
+}
+
+
+
+
+
+//massivin icinde verilen elementin nece dene oldugunu yoxluyan funksiya
+function countSameElement(array,Element){
+ let count=0;
+  for(let item of array){
+     if(item==Element){
+       count++;
+     }
+   }
+   return count;
+}
+
+//iki massivede eyni olan elementleri tekrarsiz massive yigmaq funksiyasi
+function commonElemetsFunction(firstArray,secondArray){
+  let array=[1];
+  let i=0;
+  for(let firstArrayItem of firstArray){
+    for(let secondArrayItem of secondArray){
+      if(!isThereElement(array,firstArrayItem)){
+          if(firstArrayItem==secondArrayItem){
+            array[i]=firstArrayItem;
+            i++;
+            break;
+          }
+      }
+    }
+  }
+return array;
+}
+
+//arrayda verilen elementin olub olmamasini yoxluyan funksiya
+function isThereElement(array,element){
+  let isThere=false;
+  if(array.length>0){
+    for(let f of array){
+      if(f==element){
+        isThere=true;
+        break;
+      }
+    }
+  }
+  return isThere;
+}
+
+//EKOBun alinmasi funskiyasi
+function getElementsEKOB(firstElement,secondElement){
+let firstArray=getDivided(firstElement);
+let secondArray=getDivided(secondElement);
+let resultArray=getResultArrayForEKOB(firstArray,secondArray);
+let ekob=getExtraction(resultArray);
+return ekob;
+
+
+}
+
+
+//Ekob ucun neticevi massivin alinmasi funskiyasi
+function getResultArrayForEKOB(firstArray,secondArray){
+  let resultArray=[1];
+  let exampleArray=getDifferentDivided(firstArray,secondArray);
+  let index=0;
+  for(let item of exampleArray){
+    let countFirst=countSameElement(firstArray,item);
+    let countSecond=countSameElement(secondArray,item);
+    if(countFirst>countSecond){
+      for(let i=0;i<countFirst;i++){
+        resultArray[index]=item;
+        index++;
+      }
+    }
+    else{
+      for(let i=0;i<countSecond;i++){
+        resultArray[index]=item;
+        index++;
+      }
+    }
+  }
+  return resultArray;
+}
+
+//iki massivde olan ferqli oxsar ve ferqli elementlerin tekrarsiz yiqininin alinmasi funksiyasi
+function getDifferentDivided(firstArray,secondArray){
+  let array=[1];
+  let index=0;
+  for(let item of firstArray){
+    if(!isThereElement(array,item)){
+      array[index]=item;
+      index++;
+    }
+  }
+  for(let item of secondArray){
+    if(!isThereElement(array,item)){
+      array[index]=item;
+      index++;
+    }
+  }
+return array;
+}
+
+
+let ebob=getElementsEBOB(23,72);
+let ekob=getElementsEKOB(23,72);
+console.log("EBOB -> "+ebob +" EKOB -> "+ekob);

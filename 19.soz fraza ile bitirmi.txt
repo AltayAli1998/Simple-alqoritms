@@ -1,0 +1,23 @@
+function isElementHere(phraza,word){
+ let _isThere=false;
+let count=0;
+let i=0;
+let subs=""
+for(let p of phraza){
+  count++;
+ }
+for(let w=word.length-1-count;w<word.length;w++){
+  if(word[w]==phraza[i]){
+      subs+=word[w];
+       i++;
+       if(subs==phraza){
+         _isThere=true;
+       }
+  }
+  else{
+      subs="";
+      i=0;
+         }
+  }
+return _isThere;
+}

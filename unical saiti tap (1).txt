@@ -1,0 +1,33 @@
+let array=[678,"Freelance",45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188,293 ];
+function UnicalVowels(array){
+  for(let item of array){
+    if(typeof item =="string"){
+      if(!isUnicals(item)){
+        console.log("Unical sait yoxdu");
+      }
+      else{
+        isUnicals(item);
+      }
+    }
+  }
+}
+function isUnicals(word){
+  let _isUnical=false;
+  let unicalWord="";
+  let vowels=['a','A','u','U','i','I','O','o','e','E'];
+    for(let vowel of vowels){
+    let count =0;
+      for(let letter of word){
+      if(letter==vowel){
+        count++;
+      }
+     }
+    if(count==1){
+      unicalWord+=vowel+" ";
+       _isUnical=true;
+       
+      }
+  }
+  console.log(word+" -> "+unicalWord);
+ return _isUnical;
+}

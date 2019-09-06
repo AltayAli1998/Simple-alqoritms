@@ -1,0 +1,13 @@
+function findWordInArray(array){
+  
+  for(let element of array){
+    if(typeof element == "string"){
+      let word="";
+      for(let letter of element){
+        word+=letter.charCodeAt().toString(16)+" ";
+      }
+      console.log(element+" -> "+word);
+      }
+  } 
+  
+}

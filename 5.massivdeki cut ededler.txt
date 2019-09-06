@@ -1,0 +1,8 @@
+let array=[678,45,67,89,23,545,188 ,293 ];
+function findEvenElementsInArray(array){
+  for(let i of array){
+   if(i%2==0){
+     console.log(i);
+   }
+  }
+}

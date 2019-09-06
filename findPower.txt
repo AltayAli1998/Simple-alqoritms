@@ -1,0 +1,12 @@
+function power(number,pow){
+  let count=1;
+  let result=1;
+  /*for(let i=0;i<pow;i++){
+    result=result*number;
+  }*/
+  while(pow>0){
+    result=result*number;
+    pow--;
+  }
+  return result;
+}

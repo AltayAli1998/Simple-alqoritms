@@ -1,0 +1,21 @@
+function isSimpleNumber(number){
+  let count=1;
+  let countDivide=0;
+  let _isSimple=false;
+  let subs=number;
+ while(count<=number){
+   if(subs%count==0){
+     countDivide++;
+   }
+   count++;
+ }
+ if(countDivide==2){
+   console.log("Simple");
+   _isSimple=true;
+ }else if(countDivide==1){
+   console.log("Neighter simple nor complicated");
+ }else{
+   console.log("Complicated");
+ }
+  return _isSimple;
+}

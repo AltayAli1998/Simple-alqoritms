@@ -1,0 +1,15 @@
+function isPalindrom(number){
+  let subs=number;
+  let result=0;
+  let count=10;
+  let _isPalindrom=false;
+  while(subs>0){
+    result=result*count+(subs%10);
+    subs=subs/10-(subs%10)/10;
+  }
+  
+  if(result==number){
+    _isPalindrom=true;
+  }
+  return _isPalindrom;
+}

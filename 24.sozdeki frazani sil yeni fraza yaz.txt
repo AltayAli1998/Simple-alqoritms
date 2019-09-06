@@ -1,0 +1,40 @@
+function changePhraseAnotherPhraseIntoWord(newPhrase,oldPhrase,word){
+let array=findIndex(oldPhrase,word);
+let startIndex=array[0];
+let newWord="";
+let j=0;
+let h=0;
+for(let i=0;i<word.length;i++){
+  if(i==startIndex){
+    for(let letter of newPhrase){
+      newWord+=letter;
+    }
+  }else if(i<array[0]||i>array[array.length-1]){
+    newWord+=word[i];
+  }
+
+}
+return newWord;
+}
+
+
+function findIndex(phrase,word){
+let i=0;
+let subs="";
+let indexArray=[0];
+for(let w in word){
+  if(word[w]==phrase[i]){
+      subs+=word[w];
+      indexArray[i]=w;
+       i++;
+       if(subs==phrase){
+         return indexArray;
+       }
+  }
+  else{
+      subs="";
+      i=0;
+         }
+    
+  }  
+}

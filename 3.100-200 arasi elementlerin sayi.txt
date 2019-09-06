@@ -1,0 +1,10 @@
+let array=[678,45,67,89,23,545,188 ,293 ];
+function findElementsCountInArray(array){
+  let count=0;
+  for(let i of array){
+   if(i>100&&i<200){
+      count++;
+   }
+  }
+  return count;
+}

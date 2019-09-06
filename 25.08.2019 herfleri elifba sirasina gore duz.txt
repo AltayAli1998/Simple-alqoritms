@@ -1,0 +1,20 @@
+function sortedForAlfabeticSequance(word){
+  let array=[0];
+  let resultWord="";
+  for(let i in word){
+    array[i]=word[i];
+  }
+  for(let i in array){
+    for(let j in array){
+      if(array[i].charCodeAt()<array[j].charCodeAt()){
+        let c=array[i];
+        array[i]=array[j];
+        array[j]=c;
+      }
+    }
+  }
+  for(let i of array){
+    resultWord+=i;
+  }
+  return resultWord;
+}

@@ -1,0 +1,19 @@
+function addWordIntoOurWord(newWord,index,OldWord){
+ let j=0;
+ let indexOldWord=index;;
+ let resultWord=" ";
+for(let i=0;i<index;i++){
+  resultWord+=OldWord[i];
+  indexOldWord=i;
+}
+for(let i=index;i<index+newWord.length;i++){
+  resultWord+=newWord[j];
+  j++;
+}
+for(let i=index+newWord.length;i<=OldWord.length+newWord.length;i++){
+  resultWord+=OldWord[indexOldWord];
+  indexOldWord++;
+}
+ return resultWord;
+  
+}

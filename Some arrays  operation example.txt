@@ -1,0 +1,123 @@
+let array = [678,"Freelance",45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188,293 ];
+function printChancedWordInArray(array){
+  for(let item of array){
+    if(isString(item)){
+      let word = checkUnicalVowels(item);
+      console.log(word);
+    }
+  }
+}
+function checkUnicalVowels(word){
+    let consistOfVowels="";
+  let vowelsArray=["A","a","u","U","O","o","E","e","I","i"];
+  for(let vowel of vowelsArray){
+    let count=0;
+    for(let letter of word){
+      if(letter==vowel){
+        count++;
+      }
+    }
+    if(count==1){
+      consistOfVowels+=vowel+" ";
+    }
+  }
+  return consistOfVowels;
+}
+function vowelsInArrayWords(array){
+   for(let item of array){
+    if(isString(item)){
+      let vowels=checkVowels(item);
+      console.log(item +" -> "+ vowels);
+    }
+  }
+}
+printChancedWordInArray(array);
+
+
+
+function isString(element){
+  _isString=false;
+  if(typeof element =="string"){
+    _isString=true;
+  }
+  return _isString;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function bigtoSmallLetterInArraysWord(word){
+  let newWord="";
+  for(let i of word){
+    let charcodeWords=i.charCodeAt();
+    if(charcodeWords>64&&charcodeWords<91){
+      newWord+=String.fromCharCode(charcodeWords+32);
+    }
+    else{
+      newWord+=i;
+    }
+
+    
+  }
+  return newWord;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function chancedWord(word){
+  let chanced="";
+  for(let i=word.length-1;i>=0;i--){
+    chanced+=word[i];
+  }
+  return chanced;
+}
+
+function oppositeWords(array){
+
+ let consistOfChancedWord=[0];
+ let index=0;
+  for(let item of array){
+    if(isString(item)){
+      consistOfChancedWord[index]=chancedWord(item);
+      index++;
+    }
+  }
+  return consistOfChancedWord;
+}
+

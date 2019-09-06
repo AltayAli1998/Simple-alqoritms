@@ -1,0 +1,16 @@
+function concatenateTwoWord(firstWord,secondWord){
+  let word=firstWord+secondWord;
+  let result="";
+  if(firstWord.length>secondWord.length){
+    let startIndex=firstWord.length-secondWord.length+1;
+    for(let i=startIndex;i<word.length;i++ ){
+      result+=word[i];
+    }
+  }else{
+    let finisIndex=secondWord.length-firstWord.length;
+    for(let i=0;i<word.length-finisIndex;i++ ){
+      result+=word[i];
+    }
+  }
+  console.log(result);
+}

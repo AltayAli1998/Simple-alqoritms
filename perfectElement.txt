@@ -1,0 +1,20 @@
+function isPerfectNumber(number){
+  let count=1;
+  let countDivide=0;
+  let _isPerfect=false;
+  let dividesSum=0;
+   while(count<number){
+   if(number%count==0){
+     dividesSum+=count;
+     countDivide++;
+   }
+   count++;
+ }
+ if(dividesSum==number){
+   console.log("This is perfect number");
+   _isPerfect=true;
+ }else{
+   console.log("This is not perfect number");
+ }
+  return _isPerfect;
+}

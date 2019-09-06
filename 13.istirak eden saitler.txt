@@ -1,0 +1,18 @@
+let array=[678,"Freelance",45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188, 293 ];
+function findVowelsInWordInArray(array){
+  let vowels=["A","a","I","i","o","O","U","u","e","E"];
+  for(let element of array){
+    if(typeof element == "string"){
+      let word="";
+      for(let letter of element){
+        for(let vowel of vowels){
+          if(letter == vowel){
+            word+=letter+" ";
+          }
+        }
+      }
+      console.log(element+" -> "+word);
+      }
+  } 
+  
+}

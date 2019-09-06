@@ -1,0 +1,7 @@
+function chanceHourAndMinute(number){
+  
+  let   minute=number%60;
+  let hour=number/60-minute/60;
+  
+  return hour+" hour " + minute+" minute"
+}

@@ -1,0 +1,8 @@
+function printWord(index,word){
+let newWord="";
+for(let i=index;i<word.length;i++){
+  newWord+=word[i];
+}
+return newWord;
+}
+

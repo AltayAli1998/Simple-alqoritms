@@ -1,0 +1,27 @@
+let ms =[678,"Freelance", [99,21, [99,12,456,["Simon","Holly"],78,34] ,45,67],45,67,89,"Raymond",23,true,"Michael", "Joseph",545,188,293];
+function numCount(arr){
+  if(typeof arr=="object"){
+    let counter = 0;
+    let sum = 0;
+    let average;
+  for(let f of arr){
+    if(typeof f =="object"){
+      counter=counter+numCount(f)[1];
+      sum+=numCount(f)[0];
+      
+    }
+    else if(typeof f=="number"){
+      ++counter;
+      sum+=f;
+    }
+  }
+  average=sum/counter;
+   return [sum,counter,average];
+  }
+ else{
+   console.log("argument is not object!");
+ }
+}
+
+console.log(numCount(ms)[2]);
+

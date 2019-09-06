@@ -1,0 +1,11 @@
+let array=[12,32,32,33,54,65,765,34,564,5464,234,34543,4335,54];
+function findLastnumEqual(array){
+  for(let i of array){
+    for(let j of array){
+      if(i!=j&&i%10==j%10){
+        console.log(i+" -> "+j);
+        break;
+      }
+    }
+  }
+}

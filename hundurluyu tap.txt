@@ -1,0 +1,19 @@
+function findVolume(a){
+  let volume=0;
+  let max=0;
+  let subsA=b;
+  let b=0;
+  for(let i=0;i<=20;i++){
+    volume=(a-2*b)*(a-2*b)*b;
+    if(volume>max){
+      max=volume;
+      subsA=i;
+      
+    }
+    
+    ++b;
+    console.log(volume+" -> "+i);
+  }
+  return subsA;
+}
+console.log(findVolume(78));

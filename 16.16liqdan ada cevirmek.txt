@@ -1,0 +1,47 @@
+function chanceWordFromASCII(word){
+    let speretedLetterArray=chancedLtter(word);
+  let name="";
+  for(let item of speretedLetterArray){
+    name+=String.fromCharCode(item);
+    
+  }
+  console.log(name);
+}
+function chancedLtter(word){
+  let array=elemetToArray(word);
+  let subs=word;
+ let index=0;
+ for(let item of array){
+   array[index]=parseInt(item,16);
+   console.log(array[index]);
+   index++;
+ }
+ return array;
+}
+function elemetToArray(element){
+  let words=[""];
+  let index=0;
+  for(let i=0;i<element.length;i=i+2){
+    words[index]=element[i];
+    index++;
+  }
+  index=0;
+  for(let i=1;i<element.length;i=i+2){
+    words[index]+=element[i];
+    index++;
+  }
+  return words;
+}
+function elementLength(element,num){
+  let subs=element;
+  let count =0;
+  while(subs>0){
+    subs=subs/num-(subs%num)/num;
+    count++;
+  }
+  return count;
+}
+let name ="416C746179"
+
+
+chanceWordFromASCII(name);

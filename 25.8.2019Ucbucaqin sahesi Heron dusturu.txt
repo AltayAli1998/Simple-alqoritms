@@ -1,0 +1,5 @@
+function findTrinagleArea(first,second,third){
+  let s=(first+second+third)/2;
+  let area=Math.sqrt(s*(s-first)*(s-second)*(s-third));
+  return area;
+  }

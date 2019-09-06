@@ -1,0 +1,42 @@
+let publicScores=[100,100,90,80,80,50,20];
+let aleciScores=[105,50,20,10];
+function getAliceRank(publicArray,aliceArray){
+  let differenceScores=differentElementsInArray(publicArray);
+  
+  for(let i of aliceArray){
+    let rank=1;
+    for(let j=0;j<differenceScores.length;j++){
+      if(i<differenceScores[j]){
+        rank++;
+       
+      }
+       
+    }
+     console.log(rank);
+  }
+  
+}
+function differentElementsInArray(array){
+  let resultArray=[];
+  let index=0;
+  for(let i of array){
+    if(!isElementHere(resultArray,i)){
+      resultArray[index]=i;
+      index++;
+    }
+  }
+  return resultArray;
+}
+function isElementHere(array,element){
+  let _isHere=false;
+  for(let i of array){
+    if(i==element){
+      _isHere=true;
+      break;
+    }  
+
+  }
+  return _isHere;
+}
+getAliceRank(publicScores,aleciScores);
+

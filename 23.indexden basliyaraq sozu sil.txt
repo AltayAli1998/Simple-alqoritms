@@ -1,0 +1,12 @@
+function deleteWordIntoOurWord(startIndex,delSimwols,word){
+ let j=0;
+ let indexOldWord=startIndex+delSimwols;
+ let resultWord=" ";
+for(let i=0;i<startIndex;i++){
+  resultWord+=word[i];
+}
+for(let i=indexOldWord;i<word.length;i++){
+  resultWord+=word[i];
+}
+ return resultWord;
+}

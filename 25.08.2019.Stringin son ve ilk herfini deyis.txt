@@ -1,0 +1,17 @@
+function changeFirsLastLetter(word){
+  let chancedWord="";
+  let len=word.length-1;
+  for(let i=0;i<=len;i++){
+    if(i==0){
+      chancedWord+=word[len];
+    }
+    else if(i==len){
+      chancedWord+=word[0];
+
+    }
+    else{
+      chancedWord+=word[i];
+    }
+  }
+  return chancedWord;
+}

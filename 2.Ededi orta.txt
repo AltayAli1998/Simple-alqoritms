@@ -1,0 +1,10 @@
+let array=[678,45,67,89,23,545,188 ,293 ];
+function getAverageArrayElements(array){
+  let sum=0;
+  let count=0;
+  for(let i of array){
+    sum+=i;
+    count++;
+  }
+  return sum/count;
+}

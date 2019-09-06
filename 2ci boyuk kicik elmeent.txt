@@ -1,0 +1,22 @@
+let array = [5,65,12,32,89,78,98,56,6,21,46,47,4];
+function secondMax(array){
+  let sortedArray=sortArraySmallToBig(array);
+  return sortedArray[sortedArray.length-2];
+}
+function secondMin(array){
+  let sortedArray=sortArraySmallToBig(array);
+  return sortedArray[1];
+}
+function sortArraySmallToBig(array){
+  let max=array[0];
+  for(let i in array){
+    for(let j in array){
+      if(array[i]<array[j]){
+        let c=array[i];
+        array[i]=array[j];
+        array[j]=c;
+      }
+    }
+  }
+  return array;
+}
