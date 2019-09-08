@@ -1,0 +1,51 @@
+function queenAtack(queenPos,chessBoardSize){
+  if(queenPos.length==2){
+    let count=chessBoardSize*2-2;
+    let xPos=queenPos[0];
+    let yPos=queenPos[1];
+    return count+=additionalDiag(xPos,yPos,chessBoardSize)+mainDiag(xPos,yPos,chessBoardSize);
+  }
+}
+function additionalDiag(x,y,chessBoardSize){
+  let xPos=x;
+  let yPos=y;
+ if(xPos>0&&yPos>0){
+    let count=0
+  while(xPos>0&&yPos>0){
+      --xPos;
+      --yPos;
+    }
+    while(xPos<chessBoardSize&&yPos<chessBoardSize){
+      ++xPos;
+      ++yPos;
+      
+      if(xPos!=x&&yPos!=y){
+        console.log(xPos+" x,"+yPos+" y");
+      count++;
+      }
+    }
+    return count;
+ }
+}
+function mainDiag(x,y,chessBoardSize){
+  let xPos=x;
+  let yPos=y
+  if(xPos>0&&yPos>0){
+    let count=0;
+    while((xPos>0&&yPos<=chessBoardSize)){
+      --xPos;
+      ++yPos;
+    }
+    while(yPos>=0&&xPos<chessBoardSize){
+      ++xPos;
+      --yPos;
+      
+      if(xPos!=x&&yPos!=y){
+       console.log(xPos+" x,"+yPos+" y"); 
+      count++;
+      }
+    }
+    return count;
+  }
+}
+console.log(queenAtack([8,1],8))
